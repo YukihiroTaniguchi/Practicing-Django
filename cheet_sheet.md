@@ -53,5 +53,16 @@ practicing_django
 ytmbp:src yukihiro$ pwd
 /Users/yukihiro/practicing_django/src
 ytmbp:src yukihiro$ cd ..
-ytmbp:sudo docker run -it -p 5000:5000 -v /Users/yukihiro/Documents/practicing_django/vol:/home/vol django_tutorial:latest /bin/bash
+ytmbp:sudo docker run -it -p 8000:8000 -v /Users/yukihiro/Documents/practicing_django/vol:/home/vol django_tutorial:latest /bin/bash
 ```
+
+djangoサーバーを立ち上げる  
+-> ubuntuコンテナ内で実行
+```python
+cd /home/vol
+django-admin startproject mysite
+cd mysite
+python3 manage.py runserver 0:8000
+```
+下記アドレスにアクセス  
+http://localhost:8080/
